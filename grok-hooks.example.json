@@ -1,0 +1,38 @@
+{
+  "_comment": "Map Claude/Grok-compatible hook events to scripts copied under ~/.grok/hooks/cpc-toolbelt/. Adjust paths for your Grok Build hooks schema.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "node",
+        "args": [
+          "${HOME}/.grok/hooks/cpc-toolbelt/session_start.js"
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "type": "command",
+        "command": "node",
+        "args": [
+          "${HOME}/.grok/hooks/cpc-toolbelt/cache_first_prompt.js"
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node",
+        "args": [
+          "${HOME}/.grok/hooks/cpc-toolbelt/stop_nudge.js"
+        ]
+      }
+    ]
+  },
+  "mappingNotes": {
+    "SessionStart": "Cursor equivalent: sessionStart — emits additional_context / additionalContext + env",
+    "UserPromptSubmit": "Cursor equivalent: beforeSubmitPrompt — soft cache-first context",
+    "Stop": "Cursor equivalent: stop — doctor nudge only if CPC_TOOLBELT_DOCTOR_ON_STOP=1",
+    "noVolumes": "These Toolbelt hooks do not depend on CPC_VOLUMES / autonomous Volumes"
+  }
+}

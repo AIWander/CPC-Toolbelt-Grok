@@ -1,0 +1,6 @@
+{
+  "cpc-hands": {
+    "command": "${CPC_ROOT}/servers/hands.exe",
+    "args": []
+  }
+}
