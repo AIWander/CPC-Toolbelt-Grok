@@ -1,0 +1,6 @@
+{
+  "cpc-programmer": {
+    "command": "${CPC_ROOT}/servers/programmer.exe",
+    "args": []
+  }
+}

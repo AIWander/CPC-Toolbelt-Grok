@@ -1,0 +1,6 @@
+{
+  "cpc-workflow": {
+    "command": "${CPC_ROOT}/servers/workflow.exe",
+    "args": []
+  }
+}

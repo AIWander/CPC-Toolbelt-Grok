@@ -1,0 +1,6 @@
+{
+  "cpc-voice": {
+    "command": "${CPC_ROOT}/servers/voice.exe",
+    "args": []
+  }
+}

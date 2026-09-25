@@ -1,0 +1,6 @@
+{
+  "cpc-manager": {
+    "command": "${CPC_ROOT}/servers/manager.exe",
+    "args": []
+  }
+}
