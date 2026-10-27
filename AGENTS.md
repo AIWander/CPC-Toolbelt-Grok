@@ -25,5 +25,5 @@ You are helping install **CPC Toolbelt** for Grok Build CLI on Windows.
 ## Programmer exception
 Claude Desktop packs include Programmer by default (installer future). Grok does **not**. If directed, use `mcp-snippets/programmer.json`.
 
-## Binary truth (BEE, 2026-09-25)
+## Binary truth (reference install, 2026-09-25)
 `hands.exe`, `voice.exe`, `workflow.exe`, `manager.exe`, `programmer.exe`. **No** `autocache.exe`. Cache dir `C:\CPC\cache` exists.

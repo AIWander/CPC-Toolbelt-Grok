@@ -11,7 +11,7 @@ description: Use when installing or configuring CPC Toolbelt — set CPC_ROOT an
 
 ## Ask the user
 1. Confirm `CPC_ROOT` (default `C:\CPC`).
-2. Confirm `CPC_CACHE` (default suggest `C:\CPC\cache` — exists on reference BEE).
+2. Confirm `CPC_CACHE` (default suggest `C:\CPC\cache` — the standard install location).
 3. Optional yes/no: Voice, Workflow, Manager (Beta).
 
 ## Enable optionals

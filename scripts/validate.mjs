@@ -43,6 +43,24 @@ if (fs.existsSync(path.join(root, 'mcp-snippets/cache.json'))) {
   errors.push('v1 must not ship mcp-snippets/cache.json (Cache is path-only)');
 }
 
+mustExist('scripts/resolve-ports.mjs');
+{
+  const shared = readJson('mcp.shared-http.example.json');
+  if (shared && !shared._default_ports) errors.push('mcp.shared-http.example.json must define _default_ports');
+  if (shared && shared._default_ports && 'autonomous' in shared._default_ports) {
+    errors.push('_default_ports must not list autonomous (paid wedge)');
+  }
+}
+
+// Public docs must not name the owner's machines or publish a machine-verified port map.
+for (const rel of ['README.md', 'AGENTS.md', 'PACK_MATRIX.md', 'START-GROK.md', 'RELATIONSHIP.md',
+  'mcp-snippets/README.md', 'mcp.shared-http.example.json', 'skills/toolbelt-setup/SKILL.md']) {
+  const p = path.join(root, rel);
+  if (fs.existsSync(p) && /\bBEE\b|owner[-_ ]verified|\b7771\b/i.test(fs.readFileSync(p, 'utf8'))) {
+    errors.push(rel + ' names an owner machine, an owner-verified port map, or the Autonomous port');
+  }
+}
+
 for (const script of ['hooks/session_start.js', 'hooks/cache_first_prompt.js', 'hooks/stop_nudge.js']) {
   mustExist(script);
 }
