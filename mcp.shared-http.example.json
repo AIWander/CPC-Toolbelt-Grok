@@ -1,12 +1,12 @@
 {
-  "_comment": "OPTIONAL ADVANCED EXAMPLE — not the plugin v1 default. Prefer stdio (${CPC_ROOT}/servers/*.exe) from mcp.json / mcp.optionals.example.json. Use shared-host HTTP only on machines that already run the cpc shared-mcp daemon. Do NOT invent an HTTP path (/sse or otherwise): set each url to match the shared-host MCP endpoint from that machine's Cursor mcp.json. Autonomous port 7771 is a paid wedge and MUST NOT appear in free Toolbelt wire examples.",
-  "_port_map_owner_verified_BEE": {
-    "autonomous": "7771 — PAID WEDGE ONLY; do not wire in free Toolbelt examples",
+  "_comment": "OPTIONAL ADVANCED EXAMPLE — not the plugin v1 default. Prefer stdio (${CPC_ROOT}/servers/*.exe) from mcp.json / mcp.optionals.example.json. Use shared-host HTTP only on machines that already run the cpc shared-mcp daemon. Do NOT invent an HTTP path (/sse or otherwise): set each url to match the shared-host MCP endpoint from that machine's Cursor mcp.json. Autonomous is a paid wedge and MUST NOT appear in free Toolbelt wire examples.",
+  "_ports_comment": "Defaults only. Each install can use its own ports: override per service with env CPC_PORT_<SERVICE> or a %CPC_ROOT%\\shared-mcp\\ports.json file, then run `node scripts/resolve-ports.mjs --servers` to get the urls for this machine. Autonomous is a paid wedge and has no free-pack port.",
+  "_default_ports": {
     "hands": 7772,
     "local": 7773,
     "manager": 7774,
     "workflow": 7775,
-    "voice": "7776 — may be cold / not always running",
+    "voice": 7776,
     "programmer": 7777,
     "ops": 7778,
     "stocks": 7779
@@ -35,7 +35,7 @@
   },
   "mcpServers": {
     "cpc-hands": {
-      "_comment": "EXAMPLE SHAPE ONLY — replace url with the real shared-host endpoint from local Cursor mcp.json on a daemon host. Port 7772 = hands.",
+      "_comment": "EXAMPLE SHAPE ONLY — replace url with the real shared-host endpoint from local Cursor mcp.json on a daemon host. Port shown is the default; use resolve-ports.mjs for this machine.",
       "url": "http://127.0.0.1:7772/<path-from-local-mcp.json>"
     },
     "cpc-manager": {
@@ -47,7 +47,7 @@
       "url": "http://127.0.0.1:7775/<path-from-local-mcp.json>"
     },
     "cpc-voice": {
-      "_comment": "Optional. Port 7776 = voice. Voice may be cold on the reference host.",
+      "_comment": "Optional. Port 7776 = voice. Voice may not always be running.",
       "url": "http://127.0.0.1:7776/<path-from-local-mcp.json>"
     },
     "cpc-programmer": {

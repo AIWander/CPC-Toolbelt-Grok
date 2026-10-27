@@ -41,7 +41,7 @@ Do **not** brand as autonomous.
 
 ## Step 3 — Wire local MCP
 
-Use snippets in `mcp-snippets/`. Hands is required. Cache is **path only** for v1 — do not wire a `cpc-cache` MCP (no `autocache.exe` on reference BEE).
+Use snippets in `mcp-snippets/`. Hands is required. Cache is **path only** for v1 — do not wire a `cpc-cache` MCP (no `autocache.exe` ships in v1).
 
 ## Step 4 — Doctor
 

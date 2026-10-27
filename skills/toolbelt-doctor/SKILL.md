@@ -11,4 +11,5 @@ description: Use when CPC Toolbelt fails to load, Hands is missing from Availabl
 4. Confirm `cpc-hands` appears under Available Tools. Cache is **not** an MCP entry in v1.
 5. If a tool fails, show the exact command the host would spawn and the OS error — do not guess.
 6. Optionals: only diagnose servers the user enabled (`voice.exe`, `workflow.exe`, `manager.exe`).
-7. Never claim an `autocache.exe` / `cpc-cache` MCP exists unless discovered on disk.
+7. Shared-host HTTP only: run `node scripts/resolve-ports.mjs` and report the resolved port per service and where it came from (env, ports file, or default). Never assume the defaults match this machine.
+8. Never claim an `autocache.exe` / `cpc-cache` MCP exists unless discovered on disk.

@@ -19,7 +19,7 @@
 | `cpc-manager` | `servers/manager.exe` (Beta) | Optional |
 | `cpc-programmer` | `servers/programmer.exe` | **Claude Desktop pack only** by default |
 
-## Binary truth (reference BEE, 2026-09-25)
+## Binary truth (reference install, 2026-09-25)
 Present under `C:\CPC\servers\\`: `hands.exe`, `voice.exe`, `workflow.exe`, `manager.exe`, `programmer.exe`.
 **No** `autocache.exe`. Cache directory `C:\CPC\cache` exists. Do not invent a Cache MCP binary for v1.
 

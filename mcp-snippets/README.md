@@ -1,6 +1,6 @@
 # MCP snippets
 
-Verified against reference BEE `C:\CPC\servers\\` (2026-09-25):
+Verified against a reference install `%CPC_ROOT%\servers\` (2026-09-25):
 
 | Key | Binary | Default |
 |---|---|---|
