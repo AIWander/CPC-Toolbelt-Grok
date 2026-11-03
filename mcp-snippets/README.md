@@ -1,6 +1,8 @@
 # MCP snippets
 
-Verified against reference BEE `C:\CPC\servers\\` (2026-09-25):
+stdio only. `${HANDS_HOME}` is filled at install time. Never commit an absolute path.
+
+The Hands home is `HANDS_HOME`, else `CPC_ROOT` when that older variable is set, else `%LOCALAPPDATA%\AIWander\Hands` (or the current user's application-data directory plus `AIWander/Hands`).
 
 | Key | Binary | Default |
 |---|---|---|
@@ -10,6 +12,6 @@ Verified against reference BEE `C:\CPC\servers\\` (2026-09-25):
 | `cpc-manager` | `manager.exe` | Optional (Beta) |
 | `cpc-programmer` | `programmer.exe` | Directed only |
 
-**Cache:** path via `CPC_CACHE` (suggest `C:\CPC\cache`). **No** `autocache.exe` / no `cache.json` MCP snippet for v1.
+**Cache:** `CPC_CACHE`, or `<Hands home>/cache`. No Cache MCP snippet for v1.
 
-Replace `${CPC_ROOT}` for the target machine.
+Commands are `<Hands home>/servers/<name>.exe`. If the host cannot expand `${HANDS_HOME}`, write the resolved stdio command only into the user's private MCP config.

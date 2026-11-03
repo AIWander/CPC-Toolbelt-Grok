@@ -1,6 +1,8 @@
 {
+  "_comment": "stdio only. ${HANDS_HOME} is filled at install time. Never commit an absolute path.",
   "cpc-workflow": {
-    "command": "${CPC_ROOT}/servers/workflow.exe",
+    "type": "stdio",
+    "command": "${HANDS_HOME}/servers/workflow.exe",
     "args": []
   }
 }

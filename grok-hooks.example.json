@@ -33,6 +33,7 @@
     "SessionStart": "Cursor equivalent: sessionStart — emits additional_context / additionalContext + env",
     "UserPromptSubmit": "Cursor equivalent: beforeSubmitPrompt — soft cache-first context",
     "Stop": "Cursor equivalent: stop — doctor nudge only if CPC_TOOLBELT_DOCTOR_ON_STOP=1",
-    "noVolumes": "These Toolbelt hooks do not depend on CPC_VOLUMES / autonomous Volumes"
+    "noVolumes": "These Toolbelt hooks do not depend on CPC_VOLUMES / autonomous Volumes",
+    "resolver": "Copy scripts/resolve-paths.cjs next to the hook scripts. session_start.js fills HANDS_HOME and CPC_CACHE only when unset."
   }
 }
