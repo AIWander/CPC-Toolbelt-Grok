@@ -5,6 +5,7 @@
  * Fail-open. Never blocks submission.
  */
 const fs = require('fs');
+const path = require('path');
 
 const LOOKUP_RE = /\b(download|fetch|install|get|find|locate|lookup|search|skill|asset|file|template|logo|binary|exe|mcp|cache|copy|pull|clone)\b/i;
 
@@ -23,11 +24,25 @@ function readInput() {
   }
 }
 
+function loadResolver() {
+  const candidates = [
+    path.join(__dirname, '..', 'scripts', 'resolve-paths.cjs'),
+    path.join(__dirname, 'resolve-paths.cjs'),
+  ];
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) return require(candidate);
+  }
+  return null;
+}
+
 function main() {
   try {
     const input = readInput();
     const prompt = String(input.prompt || input.content || input.message || '');
-    const cache = process.env.CPC_CACHE || 'C:\\CPC\\cache';
+    const resolver = loadResolver();
+    const cache = resolver
+      ? resolver.resolveToolbeltPaths().cache.path
+      : 'CPC_CACHE or <Hands home>/cache';
 
     if (prompt && LOOKUP_RE.test(prompt)) {
       const ctx =

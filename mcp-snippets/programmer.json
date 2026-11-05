@@ -1,6 +1,8 @@
 {
+  "_comment": "stdio only. ${HANDS_HOME} is filled at install time. Never commit an absolute path. Directed only.",
   "cpc-programmer": {
-    "command": "${CPC_ROOT}/servers/programmer.exe",
+    "type": "stdio",
+    "command": "${HANDS_HOME}/servers/programmer.exe",
     "args": []
   }
 }
